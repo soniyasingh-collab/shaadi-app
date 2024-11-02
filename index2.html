@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaadi karo.com</title>
+<style>
+    body
+    {
+        background-color: blue;
+    }
+ h1{
+    font-family: Arial, sans-serif;
+    text-align: justify;
+    
+ }  
+  
+div{
+    background-color: blueviolet;
+    width: 50%;
+    padding: 8px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+   
+    
+   
+}
+
+input{
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    display: flex;
+    width: 40%;
+    padding: 8px;
+    margin: 10px;
+    background-color: white;
+    color: rgb(0, 0, 0);
+    
+}
+button{
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    display: flex;
+    width: 70px;
+    padding: 10px;
+    margin-left: 120px;
+    margin-bottom: 10px; 
+    align-items: center; 
+}
+
+#btn1{
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    display: flex;
+    width: 100px;
+    padding: 10px;
+    margin-left: 250px;
+    margin-bottom: 10px; 
+    align-items: center;
+}
+
+.hidden{
+    display: none;
+}
+
+</style>
+
+</head>
+<body>
+    <h1>Shaadi karo</h1>
+    <div>
+    <input type="text"  required placeholder="type your name" id="input1" name="husband1"></input>
+        <input type="text"  required placeholder="type your wife name" id="input2" name="wife1"></input>
+        <button onclick="submit1()">submit</button>
+    </div>
+        <div style="display: none;" id="div2">
+        <input type="text" display="none" required placeholder="type your birth date" id="input3" name="husband2"></input>
+        <input type="text" required placeholder="type your birth month" id="input4" name="husband3"></input>
+        <input type="text" required placeholder="type your birth year" id="input5" name="husband4"></input>
+        <button onclick="submit2()">submit</button>
+    </div>
+
+    <div style="display: none;" id="div3">
+        <input type="text" required placeholder="type your wife birth date" id="input6" name="wife2"></input>
+        <input type="text" required placeholder="type your wife birth month" id="input7" name="wife3"></input>
+        <input type="text" required placeholder="type your wife birth year" id="input8" name="wife4"></input>
+        <button onclick="submit3()">submit</button>
+    </div>
+    <button onclick="finalsubmit()" id="btn1">final submit</button>
+
+    <script>
+       function submit1(){
+       document.getElementById('div2').style.display="";
+    }
+
+       function submit2(){
+        document.getElementById('div3').style.display="";
+    }
+
+
+//        function submit2()
+//        {
+// var husbandDay = parseInt(document.getElementById('input3').value);
+// var husbandMonth = parseInt(document.getElementById('input4').value);
+// var husbandYear = parseInt(document.getElementById('input5').value);
+
+// console.log(husbandDay)
+// console.log(husbandMonth)
+// console.log(husbandYear)
+
+// };
+function submit3()
+       {
+var wifeDay = parseInt(document.getElementById('input6').value);
+var wifeMonth = parseInt(document.getElementById('input7').value);
+var wifeYear = parseInt(document.getElementById('input8').value);
+console.log(wifeDay)
+console.log(wifeMonth)
+console.log(wifeyear)
+       };
+
+       function finalsubmit()
+       {
+        var husbandDay = parseInt(document.getElementById('input3').value);
+        var husbandMonth = parseInt(document.getElementById('input4').value);
+        var husbandYear = parseInt(document.getElementById('input5').value);
+
+        var wifeDay = parseInt(document.getElementById('input6').value);
+        var wifeMonth = parseInt(document.getElementById('input7').value);
+        var wifeYear = parseInt(document.getElementById('input8').value);
+
+      var c = 0;
+       if (husbandDay%2 == 0 && wifeDay%2 == 0)
+{
+    c = 1;
+}
+if (husbandMonth%2 == 0 && wifeMonth%2 != 0 || husbandMonth%2 != 0 && wifeMonth%2 == 0)
+{
+    c = 2;
+}
+if (husbandYear+4 == wifeYear || husbandYear+5 == wifeYear)
+{
+    c = 3;
+}
+console.log(c);
+if (c === 3)
+
+{
+    alert("shaadi kar lo")
+}
+else{
+    alert("dusra dekho")
+}
+       }
+
+
+    </script>
+</body>
+</html>
